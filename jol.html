@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add function</title>
+</head>
+<body>
+<label>A:</label>
+<input type="textbox" id="add1" size =  1> </input>
+<label>B:</label>
+<input type="textbox" id="add2" size =  1> </input>
+<label>A + B:</label>
+<input type="textbox" id="result1" size = 4> </input>
+
+<p>
+<label>A:</label>
+<input type="textbox" id="sub1" size =  1> </input>
+<label>B:</label>
+<input type="textbox" id="sub2" size =  1> </input>
+<label>A - B: </label>
+<input type="textbox" id="result2" size = 4> </input>
+
+<p>
+<label>A:</label>
+<input type="textbox" id="mul1" size =  1> </input>
+
+<label>B:</label>
+<input type="textbox" id="mul2" size =  1> </input>
+<label>A / B: </label>
+<input type="textbox" id="result3" size = 4> </input>
+
+<p>
+<label>A:</label>
+<input type="textbox" id="div1" size =  1> </input>
+<label>B:</label>
+<input type="textbox" id="div2" size =  1> </input>
+<label>A * B: </label>
+<input type="textbox" id="result4" size = 4> </input>
+
+<script type="text/javascript">
+
+var a, b, result;
+
+function Main(){
+	add();
+	minus();
+	divide();
+	multiply();
+}	
+function error(){
+
+ 	if (a.length < 1 || b.length < 1){
+		alert("Please enter a valid value!");
+		return false;	
+ 	}
+ 	else if (isNaN(a) || isNaN(b)){
+ 		alert("Please enter a number!");
+ 		return false;
+ 	}
+ }
+function add(){
+	a=document.getElementById("add1").value;
+	b=document.getElementById("add2").value;
+	error();
+	result = parseInt(a) + parseInt(b);
+	if(!isNaN(result)){
+      document.getElementById("result1").value = result;
+	} 
+	}	
+
+function minus(){
+	a=document.getElementById("sub1").value;
+	b=document.getElementById("sub2").value;
+	error();
+	result = parseInt(a) - parseInt(b);
+	if(!isNaN(result)){		
+ 	document.getElementById("result2").value = result;
+	}
+	}	
+
+function divide(){
+	a=document.getElementById("mul1").value;
+	b=document.getElementById("mul2").value;
+	error();
+	result = parseInt(a) / parseInt(b);
+	if(!isNaN(result)){		
+ 	document.getElementById("result3").value = result;
+	}
+	}
+
+	function multiply(){
+	a=document.getElementById("div1").value;
+	b=document.getElementById("div2").value;
+	error();
+	result = parseInt(a) * parseInt(b);
+	if(!isNaN(result)){		
+ 	document.getElementById("result4").value = result;
+	} 
+	}
+ 	
+</script>
+
+<br>
+<br>
+<br>
+<button type="button" onclick="Main()">Solution</button>
+
+
+
+</body>
+</html>
